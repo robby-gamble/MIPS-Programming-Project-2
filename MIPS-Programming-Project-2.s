@@ -126,6 +126,17 @@ SubtractNumber:
 subu $a2,$a2,$t2                #subtract 48 to get decimal value
 
 DoMath: multu $a2,$t5           #Multiplying by 33 raised to my exponent.
+mflo $a2                        #Stores previous math into a2
+
+addu $a0,$a0,$a2                #adds current summation to my final sum
+multu $t5,$t8                   #incrementing my exponent
+
+mflo $t5                        #stores previous math into t3
+
+subu $t7,$t7,1                  #increment x
+addu $t6,$t6,1                  #increment length
+
+j calculate                     #starts at the beginning of calculate
 
 
 OutofRange:
@@ -136,7 +147,8 @@ j Invalid       #Prints invalid
 
 
 Decide:
-    beq $t6, 4, EndProgram
+beq $t6, 4, EndProgram      #when the end is reached ends program
+j OutofRange                #if it doesnt reach the end jump to out of range
 
 EndProgram: jr $ra
 
