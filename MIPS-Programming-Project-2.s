@@ -97,8 +97,23 @@ bltz $t3,0                  #If position x is less than 0
 ble $a2,32,Decision         #If a2 <= 32 jump to choice
 beq $t6,4, OutofRange       #If $t6 is 4 then it is out of range.
 
+bgt $a2,119,OutofRange      #if a2 is larger than 119 it is not in my base system
 
-OutofRange: j Invalid       #Prints invalid
+
+
+SubtractUpper:
+subu $a2,$a2,$t1                #subtract 55 to et the decimal value
+
+SubtractLower:                  #subtract 87 to get the decimal value
+subu $a2,$a2,$t0
+
+
+SubtractNumber:
+subu $a2,$a2,$t2                #subtract 48 to get decimal value
+
+
+OutofRange:
+j Invalid       #Prints invalid
 
 
 
