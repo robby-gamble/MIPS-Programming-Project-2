@@ -82,6 +82,8 @@ li $t1,55                    #will use this value to subtract 55 from my upper c
 li $t2,48                    # will use this value to subtract 48 from the value of my numbers
 li $t6, 0                    #Cheking my string length.
 
+li $t8,33                    #base 33 :]
+
 
 
 
@@ -104,6 +106,13 @@ bge $a2,97, SubtractLower   #if a2 is less than 119 and more than 97 go to Subtr
 btg $a2,87, OutofRange
 bge $a2,65, SubtractUpper  #If a2 is less han 87 and more than 65 got to SubtractUpper
 
+bge $a2,57,OutofRange
+bge $a2,48,SubtractNumber  #If a2 is less than 57 and more than 48 jump to Subtract Number.
+
+j OutofRange               #If a2 is less than 48 jump to out of range
+
+
+
 
 
 SubtractUpper:
@@ -115,6 +124,8 @@ subu $a2,$a2,$t0
 
 SubtractNumber:
 subu $a2,$a2,$t2                #subtract 48 to get decimal value
+
+DoMath: multu $a2,$t5           #Multiplying by 33 raised to my exponent.
 
 
 OutofRange:
