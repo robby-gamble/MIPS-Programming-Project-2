@@ -28,8 +28,10 @@ addi $t4,$t4,0      #length of my string
 
 #Get rid of my trailing Spaces
 
-trailSpaces:
 jal lengthOfString #First I'll need to figure out the lenght of my string.
+li $t7,0            #setting my counter to 0
+sub $t7, $t4,1
+trailSpaces:
 
 
 
