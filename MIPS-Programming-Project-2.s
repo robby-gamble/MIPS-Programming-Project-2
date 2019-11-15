@@ -18,3 +18,17 @@ la $a0, buffer #storing space for the string
 li $a1, 1001 #allocating byte space for string to be stored
 syscall #executing command
 
+
+#Get rid of my trailing Spaces
+
+trailSpaces:
+
+
+Invalid:
+
+lengthOfString:
+
+Calcuate:
+
+
+
