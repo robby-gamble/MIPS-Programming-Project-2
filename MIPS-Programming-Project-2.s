@@ -51,7 +51,13 @@ li $a0,0                        #a0 = 0
 la $a0, message2                #loads message2
 syscall                         #executes
 
+li $v0,4
+li $a0,0
+la $a0, message3                #Loads message 3
+syscall
 
+li $v0, 10
+syscall                         #terminates Program
 
 
 
