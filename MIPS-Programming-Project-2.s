@@ -1,7 +1,8 @@
 .data
 sum: .word  0 #I will use this to store the value of the users input
-message1: .asciiz "Input your characters" #I'll need this to communicate with the user
-message2: .asciiz "This is the value of your characters.\n" #I'll display this after I finish converting everything.
+message1: .asciiz "Input\n" #I'll need this to communicate with the user
+message2: .asciiz "Output\n" #I'll display this after I finish converting everything.
+message3: .asciiz "Invalid Input.\n" #I'll display this aft
 buffer: .space 1001
 
 .text
@@ -36,14 +37,23 @@ li $t3, 0
 addu $t3,$t3,$t7                           #$t0 = x
 addu $t3,$t3,$a1                           #$t0 = $a1 at position x
 lbu $a2,0($t3)                             #load $t0 to $a2
-bgt $a2,32,endofTrail                      #if a2 is greater than 32, jump to endTrail
-subu $t1,$t1,1                             #decrement x by 1
+bgt $a2,32,endtrailSpaces                      #if a2 is greater than 32, jump to endTrail
+subu $t7,$t7,1                             #decrement x by 1
 j trailSpaces                              #starts the loop over
 endtrailSpaces:   jal calculate                #jump to calculate
 
 
 
 Invalid:
+
+li $v0,4                        #going to print a string
+li $a0,0                        #a0 = 0
+la $a0, message2                #loads message2
+syscall                         #executes
+
+
+
+
 
 
 
