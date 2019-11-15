@@ -87,6 +87,13 @@ li $t6, 0                    #Cheking my string length.
 
 calcuate:
 
+li $t3,0
+
+addu $t3, $t3, $t7          #adds x to t3
+addu $t3, $t3, $a1          #t3 now has the value at a[x]
+lbu $a2, ($t3)               #load ascii value of $t3 to $a2
+
+
 
 
 
