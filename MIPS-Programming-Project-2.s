@@ -31,7 +31,8 @@ addi $t4,$t4,0      #length of my string
 
 jal lengthOfString #First I'll need to figure out the lenght of my string.
 li $t7,0            #setting my counter to 0
-sub $t7, $t4,1
+subu $t7,$t4,1
+
 trailSpaces:
 li $t3, 0
 addu $t3,$t3,$t7                           #$t0 = x
@@ -40,7 +41,8 @@ lbu $a2,0($t3)                             #load $t0 to $a2
 bgt $a2,32,endtrailSpaces                      #if a2 is greater than 32, jump to endTrail
 subu $t7,$t7,1                             #decrement x by 1
 j trailSpaces                              #starts the loop over
-endtrailSpaces:   jal calculate                #jump to calculate
+endtrailSpaces:   jal constants                #jump to constants
+
 
 
 
