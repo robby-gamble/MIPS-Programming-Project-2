@@ -95,7 +95,7 @@ addu $t3, $t3, $t7          #adds x to t3
 addu $t3, $t3, $a1          #t3 now has the value at a[x]
 lbu $a2, ($t3)              #load ascii value of $t3 to $a2
 
-bltz $t3,0                  #If position x is less than 0
+bltz $t3,EndProgram                  #If position x is less than 0
 ble $a2,32,Decision         #If a2 <= 32 jump to choice
 beq $t6,4, OutofRange       #If $t6 is 4 then it is out of range.
 
