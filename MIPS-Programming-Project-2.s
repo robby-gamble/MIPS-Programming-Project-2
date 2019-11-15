@@ -103,7 +103,7 @@ bgt $a2,119,OutofRange      #if a2 is larger than 119 it is not in my base syste
 
 bge $a2,97, SubtractLower   #if a2 is less than 119 and more than 97 go to Subtractlower function
 
-btg $a2,87, OutofRange
+bgt $a2,87, OutofRange
 bge $a2,65, SubtractUpper  #If a2 is less han 87 and more than 65 got to SubtractUpper
 
 bge $a2,57,OutofRange
