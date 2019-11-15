@@ -1,6 +1,6 @@
 .data
 sum: .word  0 #I will use this to store the value of the users input
-message1: .asciiz "Input exactly 10 characters.\n" #I'll need this to communicate with the user
+message1: .asciiz "Input your characters" #I'll need this to communicate with the user
 newLine: .asciiz "\n\n\n" #New Line
 message2: .asciiz "This is the value of your characters.\n" #I'll display this after I finish converting everything.
 buffer: .space 32
@@ -16,7 +16,7 @@ syscall #executing command
 
 li $v0, 8 #Command to read a string
 la $a0, buffer #storing space for the string
-li $a1, 11 #allocating byte space for string to be stored
+li $a1, 1001 #allocating byte space for string to be stored
 syscall #executing command
 
 
