@@ -75,9 +75,18 @@ addi $t4,$t4,1                    #increaseing the value of my string length by 
 j count                           #restarts my count loop
 exit: jr $ra
 
+constants:
+
+li $t0, 87                   #will use this value to subtract 87 from my lowercse letters
+li $t1,55                    #will use this value to subtract 55 from my upper case letters
+li $t2,48                    # will use this value to subtract 48 from the value of my numbers
+li $t6, 0                    #Cheking my string length.
+
+
 
 
 calcuate:
+
 
 
 
