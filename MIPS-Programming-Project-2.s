@@ -43,6 +43,13 @@ subu $t7,$t7,1                             #decrement x by 1
 j trailSpaces                              #starts the loop over
 endtrailSpaces:   jal constants                #jump to constants
 
+li $a2,0                #resetting my temp register
+addu $a2,$a2,$a0        #Putting my sum into a2
+
+li $v0,4
+li $a0,0
+la $a0, message2        #about to print 'output:'
+syscall                 #execution 
 
 
 
